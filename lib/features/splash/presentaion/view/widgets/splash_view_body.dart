@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:booky/constants.dart';
 import 'package:booky/core/utils/assets.dart';
 import 'package:booky/features/homa/presentation/views/home_view.dart';
 import 'package:booky/features/splash/presentaion/view/widgets/slider_transation.dart';
@@ -55,7 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void slideAnimation()
   {
     animatedContainer =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+        AnimationController(vsync: this, duration: kTranstionDuration);
     animation = Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
         .animate(animatedContainer);
     animatedContainer.forward();

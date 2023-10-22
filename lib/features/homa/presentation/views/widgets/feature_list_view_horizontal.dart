@@ -13,7 +13,7 @@ class CustomListViewHorizontal extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 20.0),
+            padding:  EdgeInsets.only(right: 15.0),
             child: CustomListViewImage(),
           );
         },
