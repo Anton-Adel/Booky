@@ -12,47 +12,45 @@ import 'feature_list_view_horizontal.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-    double screenWidth=MediaQuery.of(context).size.width;
-    return  const CustomScrollView(
+    double screenWidth = MediaQuery.of(context).size.width;
+    return const CustomScrollView(
       slivers: [
-         SliverToBoxAdapter(
-          child:
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: CustomAppBar(),
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: CustomAppBar(),
+              ),
+              CustomListViewHorizontal(),
+              SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text(
+                  "Best seller",
+                  style: Styles.textStyle18,
                 ),
-                CustomListViewHorizontal(),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child:  Text(
-                    "Best seller",
-                    style: Styles.textStyle18,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal:30),
-            child:  BestSellerListView(),
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BestSellerListView(),
           ),
         )
       ],
     );
+
     // return const Padding(
     //   padding: EdgeInsets.symmetric(horizontal: 30.0),
     //   child: Column(
@@ -85,17 +83,13 @@ class BestSellerListView extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-        itemBuilder: (context,index){
-
-      return const  Padding(
-        padding:  EdgeInsets.only(bottom: 20.0),
-        child: BestSellerListViewItem()
-      );
-    },
-    itemCount: 100,
+      padding: EdgeInsets.zero,
+      itemBuilder: (context, index) {
+        return const Padding(
+            padding: EdgeInsets.only(bottom: 20.0),
+            child: BestSellerListViewItem());
+      },
+      itemCount: 100,
     );
   }
 }
-
-
